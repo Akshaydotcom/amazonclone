@@ -65,3 +65,23 @@ function selectGenre(id) {
         listItem.classList.replace('unselected','selected')
     }
 }
+
+const hamburgerIcon = document.getElementById('hamburger-icon');
+const dropdownMenu = document.getElementById('dropdown');
+
+hamburgerIcon.addEventListener('click', () => {
+    if (dropdownMenu.style.display === "none") {
+        dropdownMenu.style.display = "block";
+    } else {
+        dropdownMenu.style.display = "none";
+    }
+});
+
+// Optional: Close the dropdown when clicking outside
+// document.addEventListener('click', (event) => {
+//     if (!hamburgerIcon.contains(event.target)) {
+//         dropdownMenu.style.display = "none";
+//     }
+// });
+
+
