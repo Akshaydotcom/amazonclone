@@ -1,5 +1,5 @@
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Amazon Ember', sans-serif;
     background-color: #f6f6f6;
     margin:0;
     padding: 0;
@@ -21,6 +21,32 @@ header {
 
 #delivery-info, #account-info {
     font-size: 14px;
+}
+
+#delivery-info span{
+    white-space: pre-line;;
+}
+#search-bar{
+    display: inline-flex;
+}
+
+#search-bar input{
+    width:50dvw;
+    height:40px;
+}
+
+#search-bar button{
+    height: 40px;
+    background-color: #F4BF76;
+}
+
+.small{
+    font-size: 15px;
+}
+
+.large{
+    font-size: 20px;
+    display: block;
 }
 
 nav {
