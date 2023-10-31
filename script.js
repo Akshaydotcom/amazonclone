@@ -57,7 +57,6 @@ window.onclick = function(event) {
 }
 
 function selectGenre(id) {
-    debugger
     const listItem=document.getElementById(id);
     if(listItem.classList.contains('selected')){
         listItem.classList.replace('selected','unselected')

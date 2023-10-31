@@ -63,7 +63,7 @@ nav {
     width: 100%;
     height: 100dvh;
     overflow: hidden;
-    background-color: rgba(0,0,0,0.9);
+    background-color: rgba(0,0,0,0.5);
 }
 
 .modal-content {
@@ -73,7 +73,7 @@ nav {
     border-radius: 8px;
     overflow-x: auto ;
     height: 60%;
-    background-color: rgba(0,0,0,0.5);
+    background-color: rgba(0,0,0,0.7);
     overflow-y: hidden;
     overflow-x: auto;
 }
@@ -118,7 +118,7 @@ nav {
     white-space: nowrap;
 }
 
-#genresList li:nth-child(4n+1):hover {
+#genresList li:nth-child(4n+1):hover, #genresList li.selected:nth-child(4n+1) {
     background-color: transparent; /* Make background color transparent on hover */
     background-image: url('./icons/Ellipse\ 18.png'); /* URL to your desired image */
     background-size: cover; /* Cover the entire circle with the image */
@@ -126,7 +126,7 @@ nav {
     background-repeat: no-repeat; /* Ensure the image doesn't repeat */
     color: white;
 }
-#genresList li:nth-child(4n+2):hover {
+#genresList li:nth-child(4n+2):hover ,  #genresList li.selected:nth-child(4n+2){
     background-color: transparent; /* Make background color transparent on hover */
     background-image: url('./icons/Ellipse\ 25.png') !important;/* URL to your desired image */
     background-size: cover; /* Cover the entire circle with the image */
@@ -134,7 +134,7 @@ nav {
     background-repeat: no-repeat; /* Ensure the image doesn't repeat */
     color: white;
 }
-#genresList li:nth-child(4n+3):hover {
+#genresList li:nth-child(4n+3):hover, #genresList li.selected:nth-child(4n+3) {
     background-color: transparent; /* Make background color transparent on hover */
     background-image: url('./icons/Ellipse\ 26.png') !important; /* URL to your desired image */
     background-size: cover; /* Cover the entire circle with the image */
@@ -142,7 +142,7 @@ nav {
     background-repeat: no-repeat; /* Ensure the image doesn't repeat */
     color: white;
 }
-#genresList li:nth-child(4n+4):hover {
+#genresList li:nth-child(4n+4):hover, #genresList li.selected:nth-child(4n+4) {
     background-color: transparent; /* Make background color transparent on hover */
     background-image: url('./icons/Ellipse\ 27.png') !important; /* URL to your desired image */
     background-size: cover; /* Cover the entire circle with the image */
