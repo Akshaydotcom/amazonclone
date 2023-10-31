@@ -1,0 +1,114 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f6f6f6;
+    margin:0;
+    padding: 0;
+}
+
+header {
+    background-color: #141920;
+    color: white;
+    padding: 10px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+#branding img {
+    width: 100px; /* Placeholder value, adjust as needed */
+    height: auto;
+}
+
+#delivery-info, #account-info {
+    font-size: 14px;
+}
+
+nav {
+    background-color: #232F3F;
+    padding: 10px 20px;
+    color: white;
+}
+
+#promo-banner-main {
+    background-image: url("./images/amazon_logo.png");
+    background-repeat: no-repeat;
+    background-position: center top;
+    background-size: cover;
+    height: 78dvh; /* Placeholder value, adjust as needed */
+    position: relative;
+}
+
+#personal-info {
+    display: grid;
+    grid-template-columns: 30% 70%;
+    align-items: center;
+    gap: 10px;
+    position: absolute;
+    left:5%;
+    bottom:69%
+}
+
+.promo-banner-1st-quad{
+    position: absolute;
+    left: 10%;
+    bottom: -17%;
+}
+
+#firstthird{
+    background-color: white;
+    height: 40dvh;
+    position: absolute;
+    bottom: 0%;
+    left: 5%;
+    width: 25dvw;
+}
+
+.top-links-class{
+    display: grid;
+    grid-template-columns: 50% 50%;
+    gap: 25px;
+}
+
+
+#secondthird{
+    background-color: white;
+    height: 40dvh;
+    position: absolute;
+    bottom: 0%;
+    left: 35%;
+    width: 25dvw;
+}
+
+#clearance-text {
+    position: absolute;
+    left:10%;
+    bottom:75%;
+    font-weight: bolder;
+    font-size: x-large;
+    text-wrap: wrap;
+}
+
+#thirdfirst{
+    background-color: white;
+    height: 19dvh;
+    position: absolute;
+    bottom: 24%;
+    left: 65%;
+    width: 25dvw;
+    padding:10px;
+}
+
+#thirdsecond{
+    position: absolute;
+    bottom: -25%;
+    left: 66%;
+}
+
+#app-text{
+    padding:15px;
+    font-size: larger;
+}
+
+.navbar li{
+    padding:0 25px
+}

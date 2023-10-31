@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Prime Video Replica</title>
+    <link rel="stylesheet" href="movie.css">
+</head>
+<body>
+    <header>
+        <div id="branding">
+            <a href="./index.html" target="_blank"><img src="images/Group.png" alt="Amazon logo placeholder"></a>
+        </div>
+        <div id="delivery-info">
+            <img src="icons/location 1.png" alt=""></img>
+            Deliver to John Bangalore 560034</div>
+        <div id="search-bar">
+            <!-- Insert search bar structure here -->
+            <input type="search" name="query" placeholder="Search...">
+            <button type="submit"><img src="icons/search 1.png"><img></button>
+        </div>
+        <div>
+            <img src="icons/india 1.png" />
+        </div>
+        <div id="account-info">           
+            <img src="icons/shopping-cart (1) 1.png" /> Cart
+        </div>
+    </header>
+
+    <nav>
+        <!-- Insert navigation links here -->
+        <img src="./icons/hamburger 1.png" />
+        <ul class="navbar" style="display: inline-flex; list-style-type: none;">
+            <li>All</li>
+            <li>Fashion</li>
+            <li>Mobiles</li>
+            <li>Gift Ideas</li>
+            <li>Prime</li>
+            <li>Amazon Pay</li>
+            <li>Computers</li>
+            <li>Customer Service</li>
+            <li><img src="images/CINDRELLA.png" /></li>
+            <li><img src="images/grouped.png" /></li>
+        </ul>
+    </nav>
+    <div id="movieDetails">
+        <!-- Movie details will be displayed here -->
+    </div>
+    <div id="otpModal" class="modal">
+        <div class="modal-content">
+            <div style="position: absolute;">
+                <span class="close" onclick="closeGenresModal()">X</span>
+            </div>
+            <img src="./icons/Prime_Video-Logo.wine 1.png" alt="logo"/>
+            <span>Please enter your profile safety pin</span>
+            <div class="password-container">
+                <input type="password" size="1" />
+                <input type="password" size="1" />
+                <input type="password" size="1" />
+                <input type="password" size="1" />
+            </div>
+            <span id="pin">Forgot Pin?</span>
+        </div>
+    </div>
+    <script>
+        const API_KEY = 'afe893bf87dee5edc34a59de4c2747a9';
+        const BASE_URL = 'https://api.themoviedb.org/3';
+
+        const movieId = new URLSearchParams(window.location.search).get('movieId');
+        console.log(`${BASE_URL}/movie/${movieId}?api_key=${API_KEY}&language=en-US`);
+        fetch(`${BASE_URL}/movie/${movieId}?api_key=${API_KEY}&language=en-US`)
+            .then(response => response.json())
+            .then(movie => {
+                const movieDetailsDiv = document.getElementById('movieDetails');
+                
+                movieDetailsDiv.style.backgroundImage = `linear-gradient(to right, black 0%, transparent 75%),url(https://image.tmdb.org/t/p/w500${movie.backdrop_path})`;
+
+                
+                // Display movie details
+                movieDetailsDiv.innerHTML = `
+                    <div class="movie-info">
+                        <h1 class="movie-title">${movie.title}</h1>
+                        <p class="movie-overview">${movie.overview}</p>
+                        <div class="stars" data-rating="0">
+                            <span class="star">☆</span>
+                            <span class="star">☆</span>
+                            <span class="star">☆</span>
+                            <span class="star">☆</span>
+                            <span class="star">☆</span>
+                            <span>${movie.vote_count}</span>
+                            <span>${movie.runtime}</span>
+                            <span>${movie.release_date}</span>
+                        </div> 
+                        <div id="movie-genres">
+                        </div>
+                        <div>
+                            <img onclick="openModal()" src="./images/Screenshot 2023-10-29 at 1.27 1.png" />
+                        </div>
+                    </div>
+                `;
+                
+                setStarRating(movie.vote_average);
+                function setStarRating(voteAverage) {
+                    // Convert the 10-point system to a 5-star system
+                    let starRating = Math.round(voteAverage / 2);
+                    
+                    // Get the stars container
+                    let starsContainer = document.querySelector('.stars');
+                    
+                    // Set the filled stars
+                    for (let i = 0; i < starRating; i++) {
+                        starsContainer.children[i].classList.add('filled');
+                        starsContainer.children[i].textContent = '★';
+                    }
+                    
+                }
+
+                const movie_genres = document.getElementById('movie-genres');  
+                movie.genres.forEach(genre => {
+                    movie_genres.innerHTML+=`<span style="text-decoration: underline; color:white; padding: 0 10px">${genre.name}</span>`
+                }); 
+            });
+        
+            function openModal() {
+                const genresModal = document.getElementById('otpModal');
+                genresModal.style.display = "block";
+            }
+
+            function closeGenresModal() {
+                const genresModal = document.getElementById('otpModal');
+                genresModal.style.display = "none";
+            }
+
+            // Close the modal if the user clicks outside the modal content
+            window.onclick = function(event) {
+                const genresModal = document.getElementById('otpModal');
+                if (event.target === genresModal) {
+                    genresModal.style.display = "none";
+                }
+            }
+            
+
+            // Example usage
+              // This will fill 3 stars out of 5
+
+    </script>
+</body>
+</html>

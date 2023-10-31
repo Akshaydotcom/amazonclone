@@ -1,0 +1,160 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #1c1c1c;
+    margin:0;
+    padding: 0;
+}
+
+header {
+    background-color: #141920;
+    color: white;
+    padding: 10px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+nav {
+    background-color: #232F3F;
+    padding: 10px 20px;
+    color: white;
+}
+
+.navbar li{
+    padding:0 25px
+}
+
+.movie-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+    justify-content: center;
+    padding: 20px;
+}
+
+.movie {
+    width: 200px;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.movie img {
+    width: 100%;
+    display: block;
+}
+
+.main-movie-container{
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center top;
+}
+
+#main-movie, #main-movie div{
+    height:75dvh;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100dvh;
+    overflow: hidden;
+    background-color: rgba(0,0,0,0.9);
+}
+
+.modal-content {
+    position: relative;
+    margin: 14% auto;
+    width: 65%;
+    border-radius: 8px;
+    overflow-x: auto ;
+    height: 60%;
+    background-color: rgba(0,0,0,0.5);
+    overflow-y: hidden;
+    overflow-x: auto;
+}
+
+.close {
+    position: relative;
+    left: 377%;
+    right:15px;
+    bottom: 5px;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+    border: 3px solid #00A8E1;
+    background-color: black !important;
+    color: white !important;
+}
+
+#genresList {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;  /* Allows items to wrap to next line */
+    justify-content: center;  /* Centers items on each line */
+    transition: background-color 0.5s ease, background-image 0.5s ease;
+}
+
+
+#genresList li, .close {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    margin: 10px;
+    background-color: #00A8E1;
+    color: black;
+    padding: 0px 35px;
+    width: 23px;
+    height: 85px;
+    border-radius: 100%;
+    font-weight: bold;
+    text-align: center;
+    white-space: nowrap;
+}
+
+#genresList li:nth-child(4n+1):hover {
+    background-color: transparent; /* Make background color transparent on hover */
+    background-image: url('./icons/Ellipse\ 18.png'); /* URL to your desired image */
+    background-size: cover; /* Cover the entire circle with the image */
+    background-position: center; /* Center the image in the circle */
+    background-repeat: no-repeat; /* Ensure the image doesn't repeat */
+    color: white;
+}
+#genresList li:nth-child(4n+2):hover {
+    background-color: transparent; /* Make background color transparent on hover */
+    background-image: url('./icons/Ellipse\ 25.png') !important;/* URL to your desired image */
+    background-size: cover; /* Cover the entire circle with the image */
+    background-position: center; /* Center the image in the circle */
+    background-repeat: no-repeat; /* Ensure the image doesn't repeat */
+    color: white;
+}
+#genresList li:nth-child(4n+3):hover {
+    background-color: transparent; /* Make background color transparent on hover */
+    background-image: url('./icons/Ellipse\ 26.png') !important; /* URL to your desired image */
+    background-size: cover; /* Cover the entire circle with the image */
+    background-position: center; /* Center the image in the circle */
+    background-repeat: no-repeat; /* Ensure the image doesn't repeat */
+    color: white;
+}
+#genresList li:nth-child(4n+4):hover {
+    background-color: transparent; /* Make background color transparent on hover */
+    background-image: url('./icons/Ellipse\ 27.png') !important; /* URL to your desired image */
+    background-size: cover; /* Cover the entire circle with the image */
+    background-position: center; /* Center the image in the circle */
+    background-repeat: no-repeat; /* Ensure the image doesn't repeat */
+    color: white;
+}
+
+.selected{
+    border:2px solid white;
+}
+
+.unselected{
+    border:none;
+}

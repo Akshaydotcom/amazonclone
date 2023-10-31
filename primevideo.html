@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Prime Video Replica</title>
+    <link rel="stylesheet" href="primevideo.css">
+</head>
+<body>
+    <header>
+        <div id="branding">
+            <a href="./index.html" target="_blank"><img src="images/Group.png" alt="Amazon logo placeholder"></a>
+        </div>
+        <div id="delivery-info">
+            <img src="icons/location 1.png" alt=""></img>
+            Deliver to John Bangalore 560034</div>
+        <div id="search-bar">
+            <!-- Insert search bar structure here -->
+            <input type="search" name="query" placeholder="Search...">
+            <button type="submit"><img src="icons/search 1.png"><img></button>
+        </div>
+        <div>
+            <img src="icons/india 1.png" />
+        </div>
+        <div id="account-info">           
+            <img src="icons/shopping-cart (1) 1.png" /> Cart
+        </div>
+    </header>
+
+    <nav>
+        <!-- Insert navigation links here -->
+        <img src="./icons/hamburger 1.png" />
+        <ul class="navbar" style="display: inline-flex; list-style-type: none;">
+            <li>All</li>
+            <li>Home</li>
+            <li>Store</li>
+            <li>Live TV</li>
+            <li>Free with Ads</li>
+            <li>Categories</li>
+            <li>Watch Party</li>
+            <li>My Stuff</li>
+            <li><img src="images/CINDRELLA.png" /></li>
+            <li onclick="showGenresModal()"><img src="images/grouped.png" /></li>
+        </ul>
+    </nav>
+    <div id="genresModal" class="modal">
+        <div class="modal-content">
+            <ul id="genresList">
+                <!-- Genres will be populated here -->
+                <li id="Action" onclick="selectGenre('Action')" class="unselected">Action</li>
+                <li id="Adventure" onclick="selectGenre('Adventure')" class="unselected">Adventure</li>
+                <li id="Animation" onclick="selectGenre('Animation')" class="unselected">Animation</li>
+                <li id="Comedy" onclick="selectGenre('Comedy')" class="unselected">Comedy</li>
+                <li id="Crime" onclick="selectGenre('Crime')" class="unselected">Crime</li>
+                <li id="Drama" onclick="selectGenre('Drama')" class="unselected">Drama</li>
+                <li id="Fantasy" onclick="selectGenre('Fantasy')" class="unselected">Fantasy</li>
+                <li id="Horror" onclick="selectGenre('Horror')" class="unselected">Horror</li>
+                <li id="Mystery" onclick="selectGenre('Mystery')" class="unselected">Mystery</li>
+                <li id="Romance" onclick="selectGenre('Romance')" class="unselected">Romance</li>
+                <li id="Sci-Fi" onclick="selectGenre('Sci-Fi')" class="unselected">Sci-Fi</li>
+                <li id="Thriller" onclick="selectGenre('Thriller')" class="unselected">Thriller</li>
+                <li id="War" onclick="selectGenre('War')" class="unselected">War</li>
+                <li id="Western" onclick="selectGenre('Western')" class="unselected">Western</li>
+                <li id="Biography" onclick="selectGenre('Biography')" class="unselected">Biography</li>
+                <li id="Family" onclick="selectGenre('Family')" class="unselected">Family</li>
+                <li id="Musical" onclick="selectGenre('Musical')" class="unselected">Musical</li>
+                <li id="Historical" onclick="selectGenre('Historical')" class="unselected">Historical</li>
+                <li id="Sport" onclick="selectGenre('Sport')" class="unselected">Sport</li>
+                <li id="Noir" onclick="selectGenre('Noir')" class="unselected">Noir</li>
+                <li id="Political" onclick="selectGenre('Political')" class="unselected">Political</li>
+                <li id="Period" onclick="selectGenre('Period')" class="unselected">Period</li>
+
+            </ul>
+            <div style="position: absolute;">
+                <span class="close" onclick="closeGenresModal()">Done</span>
+            </div>
+        </div>
+    </div>
+    
+    
+    <div style="position: absolute;">
+        <div id="main-movie"></div>
+        <span style="color:white; padding-left: 8%;"><span style="color: blue;">Prime</span> Amazon Originals and Exclusives</span>
+        <div id="movieContainer" class="movie-container">
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
